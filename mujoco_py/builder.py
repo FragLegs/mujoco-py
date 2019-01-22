@@ -35,6 +35,15 @@ def get_nvidia_lib_dir():
     paths = sorted(paths)
     if len(paths) == 0:
         return None
+
+    import uuid
+    if uuid.getnode() == 963354559212:
+        print(
+            'Running on Shayne\'s laptop. Using the nvidia driver will fubar '
+            'his screen, so please don\'t.'
+        )
+        return None
+
     if len(paths) > 1:
         print("Choosing the latest nvidia driver: %s, among %s" % (paths[-1], str(paths)))
 
