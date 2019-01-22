@@ -36,8 +36,7 @@ def get_nvidia_lib_dir():
     if len(paths) == 0:
         return None
 
-    import uuid
-    if uuid.getnode() == 963354559212:
+    if os.environ.get('COMPUTER_NAME', '') == 'laptop':
         print(
             'Running on Shayne\'s laptop. Using the nvidia driver will fubar '
             'his screen, so please don\'t.'
